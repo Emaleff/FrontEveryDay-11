@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+@font-face {
+  font-family: "JosefinSansBold";
+  src: url("../fonts/JosefinSans-Bold.ttf");
+}
+@font-face {
+  font-family: "JosefinSans";
+  src: url("../fonts/JosefinSans-Regular.ttf");
+}
+.container {
+  min-height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 125px;
+  width: 100%;
+  background: #f2f2f2;
+  background-image: url(../images/Bitmap-light.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100%;
+}
+.dark .container {
+  background: #171823;
+  background-image: url("../images/Bitmap.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100%;
+}
+.title__block {
+  max-width: 540px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 48px;
+}
+.title {
+  font-family: JosefinSansBold, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: 15px;
+  color: #ffffff;
+}
+.theme__svg {
+  align-self: flex-end;
+  fill: #ffffff;
+  transition: 2s;
+}
+.dark .theme__svg_dark,
+.theme__svg_light {
+  display: block;
+}
+.dark .theme__svg_light,
+.theme__svg_dark {
+  display: none;
+}
+
+.theme__svg:hover {
+  fill: yellow;
+  cursor: pointer;
+}
+.input {
+  position: relative;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+.input__text {
+  width: 100%;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  height: 64px;
+  border: 0;
+  border-radius: 5px;
+  padding: 23px 72px;
+  box-sizing: border-box;
+  outline: 0;
+  font-family: JosefinSans, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: -0.25px;
+  color: #494c6b;
+}
+.dark .input__text {
+  background: #25273d;
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+}
+::placeholder {
+  font-family: JosefinSans, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: -0.25px;
+  color: #9495a5;
+}
+.rights {
+  position: absolute;
+  left: calc(50% - 85px);
+  bottom: 0;
+  padding: 52px 0;
+  font-family: JosefinSans, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: -0.194444px;
+  color: #5b5e7e;
+}
+.label {
+  display: block;
+  position: absolute;
+  /* padding-left: 20px;
+  margin-bottom: 10px; */
+  top: 20px;
+  left: 24px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Скрываем input[checkbox] */
+.label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Кастомный чекбокс */
+.checkbox {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid #e3e4f1;
+}
+.dark .checkbox {
+  border: 1px solid #393a4b;
+}
+/* Нажатый чекбокс */
+.label input:checked + .checkbox {
+  background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+}
+
+/* Создание галочки чекбокса */
+.checkbox:after {
+  content: url(../images/yes.svg);
+  /* position: static; */
+  display: none;
+}
+
+.label input:checked + .checkbox:after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.block {
+  max-width: 540px;
+  margin: 24px auto 0;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  border-radius: 5px;
+  background: #ffffff;
+  overflow: hidden;
+}
+.dark .block {
+  background: #25273d;
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+}
+.listContainer {
+  list-style: none;
+}
+.listItem {
+  width: 100%;
+  min-height: 64px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 21px 72px;
+  border-bottom: 1px solid #e3e4f1;
+}
+.dark .listItem {
+  border-bottom: 1px solid #393a4b;
+}
+.textItem {
+  font-family: JosefinSans, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: -0.25px;
+  color: #494c6b;
+}
+.dark .textItem {
+  color: #c8cbe7;
+}
+.textItem.completed {
+  text-decoration-line: line-through;
+  color: #d1d2da;
+}
+.dark .textItem.completed {
+  text-decoration-line: line-through;
+  color: #4d5067;
+}
+.delete {
+  position: absolute;
+  top: 24px;
+  right: 23px;
+  opacity: 0.07;
+}
+.delete:hover {
+  opacity: 1;
+  transition: 0.3s;
+}
+.dark .delete {
+  fill: #d8d8d8;
+  opacity: 0.4;
+}
+.dark .delete:hover {
+  opacity: 1;
+}
+.info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 20px 24px;
+  box-sizing: border-box;
+}
+.info__items {
+  font-family: JosefinSans, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: -0.194444px;
+  color: #9495a5;
+}
+.info__item {
+  font-family: JosefinSans, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: -0.194444px;
+  color: #9495a5;
+  margin: 0 10px;
+}
+.dark .info__item {
+  color: #5b5e7e;
+}
+.info__item_bold {
+  font-family: JosefinSansBold, sans-serif;
+}
+.info__item_active,
+.dark .info__item_active {
+  color: #3a7cfd;
+}
+.on-drag-enter {
+  box-shadow: inset 0 0 2px 2px gray;
+  transform: scale(1.1);
+  transition: 0.3s ease-in;
+}
+.info__item:hover,
+.delete:hover,
+.checkbox:hover,
+.textItem:hover,
+.theme__svg:hover {
+  cursor: url(../images/cursor.png) 2 2, pointer;
+}

@@ -1,5 +1,6 @@
 @media screen and (max-width: 630px) {
-  .container {
+  .container,
+  .dark .container {
     background-image: 200px;
     background-size: auto;
     padding-top: 48px;

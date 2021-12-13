@@ -79,7 +79,10 @@ completedTasks.addEventListener("click", () => {
   );
 });
 listContainer.addEventListener("click", ({ target }) => {
-  if (target.classList.contains("checkbox")) {
+  if (
+    target.classList.contains("checkbox") ||
+    target.classList.contains("textItem")
+  ) {
     const parent = target.closest("[data-task-id]");
     const textItem = parent.querySelector(".textItem");
     textItem.classList.toggle("completed");
@@ -160,8 +163,8 @@ function listItemTemplate({ id, title, completed }) {
   li.setAttribute("data-task-id", id);
   label.appendChild(checkbox);
   label.appendChild(span);
+  label.appendChild(text);
   li.appendChild(label);
-  li.appendChild(text);
   li.appendChild(img);
   return li;
 }
